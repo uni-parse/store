@@ -1,0 +1,12 @@
+{
+  "83ed9695-f0aa-4d4f-ac07-15dbd0fb6405": {
+    "name": "item1",
+    "price": 100,
+    "quantity": 50
+  },
+  "607c76ff-69a3-4e8a-86e6-8d1a475f2a86": {
+    "name": "item2",
+    "price": 200,
+    "quantity": 50
+  }
+}
