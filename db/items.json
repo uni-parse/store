@@ -1,12 +1,26 @@
 {
   "83ed9695-f0aa-4d4f-ac07-15dbd0fb6405": {
     "name": "item1",
-    "price": 100,
-    "quantity": 50
+    "price": 99,
+    "stock": 50,
+    "image": null
   },
   "607c76ff-69a3-4e8a-86e6-8d1a475f2a86": {
     "name": "item2",
-    "price": 200,
-    "quantity": 50
+    "price": 9999,
+    "stock": 0,
+    "image": null
+  },
+  "989a5c52-821c-4eca-80e9-e13b09349293": {
+    "name": "momen",
+    "price": 100000000,
+    "stock": 1,
+    "image": "/momen.jpg"
+  },
+  "aaef201d-a246-40f6-9c25-bac24899f8a5": {
+    "name": "cat",
+    "price": 299,
+    "stock": 1,
+    "image": "/cat.jpg"
   }
 }
