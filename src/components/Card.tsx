@@ -22,7 +22,7 @@ export default function Card({ id, item }: ItemEntry) {
       <br />
       {name}
       <br />
-      {formatPrice(price)}
+      {formatPrice(price)} $
       <br />
       Stock: {stock}
       <br />
@@ -37,6 +37,6 @@ function formatPrice(price: number) {
   const parts = formattedPrice.split('.')
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
-  // Add the currency symbol
-  return `${parts.join('.')} $`
+  const commaSeparatedPrice = parts.join('.')
+  return commaSeparatedPrice
 }
