@@ -1,0 +1,28 @@
+# stripe
+  go to: https://dashboard.stripe.com/test/apikeys
+  copy private key to .env
+
+# stripe 0payment test: (fill credentials)
+  email: test@test.com (any)
+  card information: 4242 4242 4242 4242
+  MM/YY: 12/24 (future)
+  CVC: 424 (any number)
+  Cardholder name: 90210 (any postal code)
+
+# stripe webhook (update db items stocks)
+  go to dashboard / develobers / webhook
+  in production:
+    select event "checkout.session.completed"
+    insurt public route url (not localhost)
+    create end point
+    copy secret key to .env
+  in development:
+    install stripe cli by scoop
+      scoop bucket add stripe https://github.com/stripe/scoop-stripe-cli.git && scoop install stripe
+    run "stripe login"
+    press Enter
+    confirm in the browser
+    ignore "pairing code" from terminal
+    run "stripe listen --forward-to http://localhost:3000/api/payments/stripe_webhook"
+    copy "webhook signing secret" from terminal to .env
+    optional test "stripe trigger payment_intent.succeeded"
