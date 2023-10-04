@@ -1,7 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Stripe } from 'stripe'
-import { adjustItemStock, getItem } from '../../../../db/items'
-import type { Order } from '@/components/OrdersProvider'
+import {
+  adjustItemStock,
+  type Order,
+} from '../../../../db/items'
 import getRawBody from 'raw-body'
 
 // disable the build-in bodyParser
@@ -20,11 +22,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST')
-    res.status(405).end('Method Not Allowed')
-    return
-  }
+  if (req.method !== 'POST')
+    return res.status(405).end('Method Not Allowed')
 
   const sig = req.headers['stripe-signature']
   if (!sig) return // handle error
