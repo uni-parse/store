@@ -26,3 +26,11 @@
     run "stripe listen --forward-to http://localhost:3000/api/payments/stripe_webhook"
     copy "webhook signing secret" from terminal to .env
     optional test "stripe trigger payment_intent.succeeded"
+
+
+# paypal
+  go to https://developer.paypal.com/dashboard/applications/sandbox
+  copy PAYPAL_CLIENT_ID & PAYPAL_CLIENT_SECRET to .env
+
+# installation
+  pnpm add paypal-checkout-sdk
